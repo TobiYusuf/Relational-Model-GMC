@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ER Diagram</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Relational Model for Hotel</h1>
+      <div class="description">
+        <p class="description-title">Description of Relationships</p>
+
+        <div class="description-content">
+          <p>
+            <strong>Hotel: </strong>Hotel_Id as the primary key and Hotel_Name
+            as an attribute.
+          </p>
+        </div>
+
+        <div class="description-content">
+          <p>
+            <strong>Type Table:</strong> Contains Type_Id as the primary key and
+            Type_Name as an attribute.
+          </p>
+        </div>
+
+        <div class="description-content">
+          <p>
+            <strong>Category Table:</strong> Contains Category_Id as the primary
+            key, Category_Name, Price, and Beds_numbers as attributes.
+          </p>
+        </div>
+        <div class="description-content">
+          <p>
+            <strong>Employee Table:</strong> Contains Employee_Id as the primary
+            key, Employee_Name, Employee_Speciality as attributes, and Hotel_Id
+            as a foreign key referencing the Hotel table.
+          </p>
+        </div>
+        <div class="description-content">
+          <p>
+            <strong>Leads Table:</strong> Contains Employee_Id and Room_Id as
+            primary keys and foreign keys, referencing the Employee and Room
+            tables, respectively.
+          </p>
+        </div>
+      </div>
+      <div class="relationship">
+        <div class="entity">
+          <h3>Hotel</h3>
+          <div class="attribute">Hotel_Id (PK)</div>
+          <div class="attribute">Hotel_Name</div>
+        </div>
+
+        <div class="relationship">
+          <div class="arrow"></div>
+          <div>1</div>
+        </div>
+        <div class="relationship">
+          <div class="line"></div>
+          <div class="arrow"></div>
+          <div>N</div>
+        </div>
+
+        <div class="entity">
+          <h3 class="entity-title">Member</h3>
+          <h3>Room</h3>
+          <div class="attribute">Room_Id (PK)</div>
+          <div class="attribute">Floor</div>
+          <div class="attribute">Hotel_Id (FK)</div>
+          <div class="attribute">Type_Id (FK)</div>
+        </div>
+      </div>
+
+      <div class="relationship">
+        <div class="entity">
+          <h3>Type</h3>
+          <div class="attribute">Type_Id (PK)</div>
+          <div class="attribute">Type_Name</div>
+        </div>
+        <div class="relationship">
+          <div class="arrow"></div>
+          <div>1</div>
+        </div>
+        <div class="relationship">
+          <div class="line"></div>
+          <div class="arrow"></div>
+          <div>N</div>
+        </div>
+
+        <div class="entity">
+          <h3>Category</h3>
+          <div class="attribute">Category_Id (PK)</div>
+          <div class="attribute">Category_Name</div>
+          <div class="attribute">Price</div>
+          <div class="attribute">Beds_numbers</div>
+        </div>
+      </div>
+
+      <div class="relationship">
+        <div class="entity">
+          <h3>Employee</h3>
+          <div class="attribute">Employee_Id (PK)</div>
+          <div class="attribute">Employee_Name</div>
+          <div class="attribute">Employee_Speciality</div>
+          <div class="attribute">Hotel_Id (FK)</div>
+        </div>
+        <div class="relationship">
+          <div class="arrow"></div>
+          <div>*</div>
+        </div>
+
+        <div class="relationship">
+          <div class="line"></div>
+          <div class="arrow"></div>
+          <div>*</div>
+        </div>
+
+        <div class="entity">
+          <div class="entity-title">SessionCoach</div>
+          <div class="attribute">Employee_Id (PK, FK)</div>
+          <div class="attribute">Room_Id (PK, FK)</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
